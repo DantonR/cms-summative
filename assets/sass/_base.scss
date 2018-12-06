@@ -1,0 +1,24 @@
+body,
+html {
+  height: 100%;
+  font-size: 16px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+.content {
+  flex: 1 0 auto;
+}
+.row {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.is-centered {
+  margin: 0 auto;
+}
+.flex-container-center {
+  display: flex;
+  justify-content: center;
+}

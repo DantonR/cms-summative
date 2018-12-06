@@ -1,0 +1,16 @@
+body,
+html {
+  height: 100%;
+  font-size: 16px; }
+
+body {
+  display: flex;
+  flex-direction: column; }
+
+.content {
+  flex: 1 0 auto; }
+
+.margin-below {
+  margin-bottom: 1rem; }
+
+/*# sourceMappingURL=base.css.map */

@@ -1,0 +1,48 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+li,
+button {
+  font-family: "Blauth";
+}
+
+.center {
+  text-align: center;
+}
+
+.heading-one {
+  font-size: $font-size--xxx-lg;
+  font-weight: 700;
+  color: $color__primary;
+}
+
+.heading-one--underline {
+  border-width: 5px;
+  border-color: $color__primary;
+  width: 80%;
+}
+
+.heading-two {
+  font-size: $font-size--lg;
+  color: $color__grey;
+}
+
+.heading-one--small {
+  font-size: $font-size--reg;
+  font-weight: 400;
+}
+
+.p__main {
+  color: $color__grey;
+  font-size: $font-size--reg;
+}
+.p__subtitle {
+  font-size: $font-size--sm;
+  font-weight: 200;
+}
+.white {
+  color: white;
+}

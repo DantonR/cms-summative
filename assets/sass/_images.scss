@@ -1,0 +1,24 @@
+$grid-gutter-width: 6px !default;
+
+@mixin image-properties($height) {
+  height: $height;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+}
+
+.image {
+  background: $color__grey--light;
+  width: 100%;
+}
+
+.image__sm {
+  @include image-properties(200px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.image__lg {
+  @include image-properties(600px);
+}

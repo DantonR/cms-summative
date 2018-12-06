@@ -1,0 +1,16 @@
+.my-form {
+  background-color: $color__grey--light;
+  padding: 1.5rem;
+}
+
+.my-form__control {
+  width: 70%;
+  display: inline-block;
+  border-radius: 0;
+  border: none;
+}
+
+.my-form__group {
+  display: flex;
+  justify-content: space-between;
+}
