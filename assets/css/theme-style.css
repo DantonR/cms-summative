@@ -40,6 +40,9 @@ button {
 .white {
   color: white; }
 
+.footer__text {
+  margin-top: 16px; }
+
 .btn-primary {
   background-color: #77a22f; }
 
@@ -52,7 +55,8 @@ button {
 .footer {
   flex-shrink: 0;
   height: 75px;
-  background-color: #e8e8e8; }
+  background-color: #e8e8e8;
+  padding-top: 16px; }
 
 .image {
   background: #e8e8e8;
@@ -69,6 +73,12 @@ button {
 
 .image__lg {
   height: 600px;
+  background-size: cover;
+  background-position: center;
+  width: 100%; }
+
+.about__img {
+  height: auto;
   background-size: cover;
   background-position: center;
   width: 100%; }
@@ -97,7 +107,8 @@ button {
 .footer {
   flex-shrink: 0;
   height: 75px;
-  background-color: #e8e8e8; }
+  background-color: #e8e8e8;
+  padding-top: 16px; }
 
 .hero-container {
   background-color: white;
@@ -107,6 +118,12 @@ button {
 .img-description__container {
   background-color: rgba(0, 0, 0, 0.7);
   padding: 4px; }
+
+.about__text-div {
+  padding: 76px; }
+
+.about__img-div {
+  background: #e8e8e8; }
 
 body,
 html {
@@ -130,6 +147,15 @@ body {
 .flex-container-center {
   display: flex;
   justify-content: center; }
+
+a {
+  text-decoration: none; }
+
+.no-margins {
+  margin: 0; }
+
+.container-fluid {
+  padding: 0; }
 
 .user-review__profile {
   width: 95px;

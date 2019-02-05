@@ -37,7 +37,7 @@ function custom_theme_customizer($wp_customize){
   // ));
 
   $wp_customize->add_panel('Front_Page_Panel', array(
-    'title'             => __('Front Page' , 'zealandiaTheme'),
+    'title'             => __('Front Page' , 'myfoodbag'),
     'priority'          => 30,
     'description'       => 'This panel will hold the home page sections'
 ));
@@ -105,7 +105,77 @@ function custom_theme_customizer($wp_customize){
     )
       );
 
+
+    //ABOUT PAGE
+    $wp_customize->add_panel('About_Page_Panel', array(
+      'title'             => __('About Page' , 'myfoodbag'),
+      'priority'          => 60,
+      'description'       => 'This panel will hold the about page sections'
+  ));
   
+
+
+  
+
+    for ($i=1; $i <= 3; $i++ ){
+      $wp_customize->add_section('about_page_section_'.$i, array(
+        'title' => __('About Section '.$i, 'myfoodbag'),
+        'priority' => 21,
+        'panel' => 'About_Page_Panel'
+      ));
+    
+      $wp_customize->add_setting('about_page_heading_'.$i.'_setting', array(
+        'default' => 'Heading '.$i.' here',
+        'transport' => 'refresh'
+      ));
+
+      $wp_customize->add_control(
+        new WP_Customize_Control(
+          $wp_customize,
+          'about_page_heading_'.$i.'_control',
+          array(
+            'label' => __('About Page Heading', 'myfoodbag'),
+            'section' => 'about_page_section_'.$i,
+            'settings' => 'about_page_heading_'.$i.'_setting'
+          )
+        )
+          );
+
+      $wp_customize->add_setting('about_page_paragraph_'.$i.'_setting', array(
+        'default' => 'paragraph '.$i.' here',
+        'transport' => 'refresh'
+      ));
+
+      $wp_customize->add_control(
+        new WP_Customize_Control(
+          $wp_customize,
+          'about_page_paragraph_'.$i.'_control',
+          array(
+            'label' => __('About Page paragraph', 'myfoodbag'),
+            'section' => 'about_page_section_'.$i,
+            'settings' => 'about_page_paragraph_'.$i.'_setting'
+          )
+        )
+          );
+      
+      $wp_customize->add_setting('about_page_image_'.$i.'_setting', array(
+        'default' => '',
+        'transport' => 'refresh'
+      ));
+    
+      $wp_customize->add_control(
+        new WP_Customize_Image_Control(
+          $wp_customize,
+          'about_page_image_'.$i.'_control',
+          array(
+            'label' => __('About Page Image', 'myfoodbag'),
+            'section' => 'about_page_section_'.$i,
+            'settings' => 'about_page_image_'.$i.'_setting'
+          )
+        )
+          );
+
+    };
 };
 
 

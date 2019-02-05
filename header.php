@@ -6,6 +6,7 @@
   <?php wp_head(); ?>
 </head>
 <body>
+  <div class="content">
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -20,7 +21,7 @@
         $logo_url = wp_get_attachment_image_url($custom_logo, 'medium');
       ?>
       <?php if($custom_logo): ?>
-        <a href="<? bloginfo('home');?>" class="navbar-brand">
+        <a href="<?= bloginfo('home');?>" class="navbar-brand">
           <img src="<?= $logo_url ?>" alt="Company Logo" height="80">
         </a>
       <?php else:?>

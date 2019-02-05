@@ -3,25 +3,31 @@
 <div class="container">
 
   <div class="row">
-    <h2 class="heading-two">Popular Items</h2>
+    <div class="col">
+    
+      <h2 class="heading-two" >Popular Items</h2>
+    </div>
   </div>
+
+  
+  <?php
+    $args = array(
+      'post_type' => 'products-post',
+      'posts_per_page' => 4
+    );
+    $productsPost = new WP_Query($args)
+  ?>
+  
   <div class="row">
-        <?php if (have_posts()): ?>
-          <?php while(have_posts()): the_post(); ?>
-            <div class="col-md-3 col-sm-6 margin-below">
-              <div class="image image__sm">
-                <div class="img-description__container">
-                  <h1 class="p__main white"><?php the_title(); ?></h1>
-                  <h1 class="p__subtitle white"><?php the_content(); ?></h1>
-                </div>
-              </div>
-            </div>
-          <?php endwhile; ?>
-        <?php endif; ?>
+    <?php if( $productsPost->have_posts()): ?>
+      <?php while( $productsPost->have_posts()): $productsPost->the_post(); ?>
+        <?php get_template_part('content', get_post_format()); ?>
+      <?php endwhile; ?>
+    <?php endif; ?>
+  </div>
 
                 
   
-  </div>
 
   <div class="row">
     <div class="col-12">
@@ -46,25 +52,32 @@
     <div class="col-3"></div>
   </div>
 
+
+    <div class="row">
  <?php
             $args = array(
                 'post_type' => 'customer-feedback',
                 'posts_per_page' => -1
             );
             $customerFeedback = new WP_Query($args);
-            // var_dump($customerFeedback);
-            // die();
-            // var_dump($image);
            ?>
 
            <?php if( $customerFeedback->have_posts() ): ?>
 
             <?php while($customerFeedback->have_posts()): $customerFeedback->the_post(); ?>
               <?php $id = get_the_id(); ?>
-              <h3><?php the_title(); ?></h3>
+              <div class="col-md-3">
+              <?php  
+                $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+                echo '<div class="user-review__profile" style="background: url('. $url.') no-repeat center/cover"></div>';
+              ?>
+                <!-- <div class="user-review__profile"></div> -->
+                <h3 class="heading-one heading-one--small center"><?php the_title(); ?></h3>
+                <p><?php the_content(); ?></p>
+              </div>
             <?php endwhile; ?>
            <?php endif; ?>
-
+           </div>
   
 </div>
 

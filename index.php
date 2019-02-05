@@ -1,9 +1,10 @@
 <?php get_header(); ?>
 
 <!-- MAIN CONTAINER -->
-<?php if(have_posts()): ?>
+<div class="container">
+  <div class="row">
+    <div class="col"><h1>hio<?php the_title(); ?></h1></div>
+  </div>
+</div>
 
-
-<?php get_footer(); ?> <?php endif; ?>
-
-<?php  php_info(); ?>
+<?php get_footer(); ?>
